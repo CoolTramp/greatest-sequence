@@ -18,10 +18,9 @@ export function greatestSequence(sequence: string) {
   let count: number = 0;
   let answ: number[] = [];
 
-  // if (stack.length === 1) return 0;
+  if (stack.length === 1) return 0;
 
   for (let taple of sequence) {
-    // console.log(stack);
     if (taple === "(") {
       stack.push(taple);
     } else if (taple === ")" && stack.length > 0) {
@@ -32,10 +31,8 @@ export function greatestSequence(sequence: string) {
       count = 0;
     }
   }
-  console.log(answ, count, stack);
 
   if (answ.length === 0 && stack.length === 0) return count * 2;
-  if (answ.length > 0) return Math.max(...answ) * 2;
-  if (stack.length === 0) return Math.max(...answ) * 2;
+  if (stack.length === 0 || answ.length > 0) return Math.max(...answ) * 2;
   if (stack.length > 0) return count;
 }
