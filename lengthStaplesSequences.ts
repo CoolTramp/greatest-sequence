@@ -39,10 +39,3 @@ export function greatestSequence(sequence: string) {
   if (stack.length === 0) return Math.max(...answ) * 2;
   if (stack.length > 0) return count;
 }
-
-// console.log(greatestSequence("()()"));
-// console.log(greatestSequence("()(()"));
-console.log(greatestSequence("()())"));
-// console.log(greatestSequence("())(()"));
-console.log();
-// console.log(greatestSequence("(()())()()(()())"));
